@@ -76,7 +76,8 @@ public class RemedioController {
 		return remedioRepository.findById(id).map(resposta -> {
 			remedioRepository.deleteById(id);
 			return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-		}).orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+		})
+				.orElse(ResponseEntity.status(HttpStatus.NOT_FOUND).build());
 	}
 
 }
